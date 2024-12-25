@@ -1,0 +1,283 @@
+:root {
+  --Purple-100: hsl(254, 88%, 90%);
+  --Purple-500: hsl(256, 67%, 59%);
+
+  --Yellow-100: hsl(31, 66%, 93%);
+  --Yellow-500: hsl(39, 100%, 71%);
+
+  --White: hsl(0, 0%, 100%);
+  --Black: hsl(0, 0%, 7%);
+
+  --fuente-principal: "DM Sans", serif;
+}
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+body {
+  font-size: 1.8rem;
+  font-family: var(--fuente-principal);
+  line-height: 1.5;
+  background-color: #e5e7e9;
+}
+img {
+  max-width: 100%;
+}
+
+[class*="contenedor"] {
+  max-width: 120rem;
+  margin: 0 auto;
+  width: 95%;
+}
+
+/* Social */
+
+.box__social {
+  background-color: var(--Purple-500);
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: var(--White);
+}
+
+.social__heading {
+  font-size: 4rem;
+  line-height: 3.5rem;
+  font-weight: 500;
+  max-width: 25rem;
+  margin-bottom: 2rem;
+  span {
+    color: var(--Yellow-500);
+  }
+}
+
+.box__social img {
+  width: 55%;
+}
+
+.social__text {
+  color: var(--Yellow-100);
+}
+
+/* Platforms */
+
+.platforms {
+  background-color: var(--White);
+  padding: 1rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+}
+
+.platforms__heading {
+  font-size: 2.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  margin: 1rem 0rem 0.8rem 0rem;
+  color: var(--Black);
+}
+
+/* Calendar */
+
+.calendar {
+  background-color: var(--Yellow-500);
+  border-radius: 1rem;
+  padding: 1rem 2rem 0rem 2rem;
+  margin-top: 3rem;
+}
+
+.calendar__heading {
+  font-size: 2.5rem;
+  line-height: 2rem;
+  margin: 1rem 0rem 2rem 0rem;
+}
+
+.calendar img {
+  width: 65%;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* Schedule */
+
+.schedule {
+  background-color: var(--Purple-100);
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+.schedule__heading {
+  font-size: 2.5rem;
+  margin: 1rem 0 1rem 0;
+}
+
+.schedule__text {
+  line-height: 1.5rem;
+  font-weight: 600;
+  width: 85%;
+}
+
+/* Followers */
+
+.followers {
+  background-color: var(--Purple-500);
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  color: var(--White);
+}
+
+.followers img {
+  width: 65%;
+  margin-top: 1rem;
+}
+
+.followers__heading {
+  font-size: 3rem;
+  font-weight: 500;
+  line-height: 2.5rem;
+  width: 65%;
+  margin-bottom: 0;
+}
+
+/* Audience */
+
+.audience {
+  background-color: var(--White);
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-top: 3rem;
+}
+
+.audience img {
+  width: 55%;
+}
+
+.audience__heading {
+  font-size: 4rem;
+  line-height: 2rem;
+  font-weight: 700;
+  margin: 2rem 0rem 0.8rem 0rem;
+  color: var(--Black);
+}
+
+/* CreatePost */
+
+.createPost {
+  background-color: var(--Yellow-100);
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.createPost img {
+  width: 55%;
+  margin-top: 1rem;
+}
+
+.createPost__heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 2.5rem;
+  margin: 1rem 0rem 1rem 0rem;
+
+  span {
+    color: var(--Purple-500);
+  }
+}
+
+/* AI */
+
+.AI {
+  background-color: var(--Yellow-500);
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.AI img {
+  width: 55%;
+}
+
+.AI__heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 2.5rem;
+  margin: 1rem 0rem 1rem 0rem;
+  width: 75%;
+  color: var(--Black);
+}
+
+/* responsive */
+
+@media (min-width: 768px) {
+  .box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .box {
+    grid-template-areas:
+      "createPost box__social box__social schedule"
+      "AI platforms calendar  schedule"
+      "AI audience followers followers ";
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 1rem;
+  }
+
+  .createPost {
+    grid-area: createPost;
+  }
+
+  .box__social {
+    grid-area: box__social;
+  }
+
+  .schedule {
+    grid-area: schedule;
+  }
+
+  .AI {
+    grid-area: AI;
+  }
+
+  .platforms {
+    grid-area: platforms;
+  }
+
+  .audience {
+    grid-area: audience;
+  }
+
+  .followers {
+    grid-area: followers;
+  }
+}
