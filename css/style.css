@@ -26,7 +26,8 @@ body {
   background-color: #e5e7e9;
 }
 img {
-  max-width: 100%;
+  max-width: 120rem;
+  width: 100%;
 }
 
 [class*="contenedor"] {
@@ -244,40 +245,189 @@ img {
 
 @media (min-width: 1440px) {
   .box {
+    display: grid;
     grid-template-areas:
       "createPost box__social box__social schedule"
-      "AI platforms calendar  schedule"
-      "AI audience followers followers ";
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+      "AI platforms calendar schedule"
+      "AI audience followers followers";
+    grid-template-columns: 1fr 1fr 1fr 1fr; /* Asegura una distribución uniforme */
     grid-template-rows: auto auto auto;
-    gap: 1rem;
+    gap: 1rem; /* Espacio consistente entre cajas */
+    position: relative;
   }
 
   .createPost {
     grid-area: createPost;
+    height: 40rem;
+    width: 100%; /* Se adapta al área asignada */
+    align-items: center;
+    padding: 2rem;
+    margin: 0; /* Elimina márgenes que causen desbordes */
+    position: relative; /* Ajusta su posición */
+  }
+
+  .createPost__heading {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 3rem;
+    margin-top: 2rem;
+
+    span {
+      font-weight: 700;
+    }
+  }
+
+  .createPost img {
+    width: 100%;
   }
 
   .box__social {
     grid-area: box__social;
+    display: flex; /* Asegura que el contenido interno use todo el espacio */
+    flex-direction: column;
+    justify-content: center; /* Centra el contenido verticalmente */
+    height: auto; /* Ajusta la altura automáticamente */
+    margin: 0; /* Elimina márgenes adicionales */
+    padding: 1rem;
+  }
+
+  .box__social img {
+    width: 50%;
+  }
+
+  .social__heading {
+    font-size: 6rem;
+    line-height: 5rem;
+    font-weight: 500;
+    margin: 1rem;
+    text-align: center; /* Alineación para consistencia */
+    max-width: 80%;
+    width: 100%;
+
+    span {
+      color: var(--Yellow-500);
+    }
   }
 
   .schedule {
     grid-area: schedule;
+    margin: 0;
+    text-align: left;
+    padding: 3rem;
+    overflow: hidden;
+  }
+
+  .schedule__heading {
+    font-size: 3rem;
+    line-height: 3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .schedule img {
+    width: 120%;
+
+    margin: 1rem 0 1rem 5rem;
+    object-fit: contain;
+  }
+
+  .schedule__text {
+    width: 100%;
+    line-height: 2.5rem;
+    font-size: 2rem;
+    margin-bottom: 0;
   }
 
   .AI {
     grid-area: AI;
+    padding: 1rem;
+  }
+
+  .AI img {
+    width: 100%;
+  }
+
+  .AI__heading {
+    font-size: 3rem;
+    line-height: 3rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
   }
 
   .platforms {
     grid-area: platforms;
+    padding: 1rem;
+    width: 100%;
+    position: relative;
+  }
+
+  .platforms__heading {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+  }
+
+  .calendar {
+    grid-area: calendar;
+    width: 100%;
+    position: relative;
+  }
+
+  .calendar img {
+    width: 100%;
+  }
+
+  .calendar__heading {
+    font-size: 2rem;
   }
 
   .audience {
     grid-area: audience;
+    padding: 1rem;
+    height: auto;
+  }
+
+  .audience img {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .audience__heading {
+    font-size: 3rem;
+    line-height: 3rem;
+    font-weight: 700;
+    margin: 2rem 0rem;
   }
 
   .followers {
     grid-area: followers;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+    text-align: left;
+  }
+
+  .followers img {
+    width: 100%;
+  }
+
+  .followers__heading {
+    font-size: 4rem;
+    width: 90%;
+    font-weight: 500;
+    line-height: 3.5rem;
+    margin: 0;
+  }
+
+  [class*="contenedor"] {
+    margin: 5rem auto;
+    width: 65%;
+  }
+
+  .AI,
+  .platforms,
+  .box__social {
+    height: auto; /* Ajuste dinámico según el contenido */
+    min-height: 20rem; /* Define una altura mínima común si necesario */
   }
 }
